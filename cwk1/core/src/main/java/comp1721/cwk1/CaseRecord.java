@@ -1,21 +1,59 @@
 package comp1721.cwk1;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class CaseRecord {
+	private LocalDate date;
+	private int staffCases;
+	private int studentCases;
+	private int otherCases;
+	private LocalDate datee;
+	private int staffnum;
+	private int studentnum;
+	private int othernum;
+	private int totalnum;
+	private String string;
   // TODO: Write stub for constructor
-	public caseRecord(LocalDate date, int staffCases, int studentCases, int otherCases)
+	public CaseRecord(){
+	}
+	public CaseRecord(LocalDate date, int staffCases, int studentCases, int otherCases)
+	{
+		this.datee = date;
+		this.staffnum = staffCases;
+		this.studentnum = studentCases;
+		this.othernum = otherCases;
+	}
   // TODO: Write stubs for four getter methods
-	LocalDate date(){
+	public LocalDate getDate(){
+		return datee;
 	}
-	int getStaffCases{
+	public int getStaffCases() {
+		return staffnum;
 	}
-	int getStudentCases{
+	public int getStudentCases() {
+		return studentnum;
 	}
-	int otherCases{
+	public int getOtherCases() {
+		return othernum;
 	}
   // TODO: Write stub for totalCases()
-	int totalCases{
+	public int totalCases() {
+		totalnum = staffnum + studentnum + othernum;
+		return totalnum;
 	}
   // TODO: Write stub for toString()
-	String toString{
+	public String toString() {
+		Integer.toString(staffnum);
+		Integer.toString(studentnum);
+		Integer.toString(othernum);
+		string = datee + ": " + staffnum + "staff, " + studentnum + "students, " + othernum + "other";
+		return string;
 	}
- 
+	public static void main(String[] args){
+		CaseRecord oneday = new CaseRecord();
+		oneday.getDate();
+		oneday.getStaffCases();
+		oneday.getStudentCases();
+		oneday.getOtherCases();
+	}
+}
