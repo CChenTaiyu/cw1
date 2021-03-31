@@ -93,6 +93,7 @@ public class Basic {
   @DisplayName("Correct format for string conversion")
   public void stringConversion() {
     assertThat(rec2.toString(), is("2020-10-19: 3 staff, 21 students, 1 other"));
+    System.out.println(rec2.toString());
   }
 
   // CovidDataset class

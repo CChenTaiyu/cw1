@@ -1,12 +1,7 @@
 package comp1721.cwk1;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class CaseRecord {
-	private LocalDate date;
-	private int staffCases;
-	private int studentCases;
-	private int otherCases;
 	private LocalDate datee;
 	private int staffnum;
 	private int studentnum;
@@ -18,6 +13,10 @@ public class CaseRecord {
 	}
 	public CaseRecord(LocalDate date, int staffCases, int studentCases, int otherCases)
 	{
+		if (staffCases < 0 || studentCases < 0 || otherCases < 0)
+		{
+			throw new DatasetException("The number of case is not valid!");
+		}
 		this.datee = date;
 		this.staffnum = staffCases;
 		this.studentnum = studentCases;
@@ -43,10 +42,8 @@ public class CaseRecord {
 	}
   // TODO: Write stub for toString()
 	public String toString() {
-		Integer.toString(staffnum);
-		Integer.toString(studentnum);
-		Integer.toString(othernum);
-		string = datee + ": " + staffnum + "staff, " + studentnum + "students, " + othernum + "other";
+		System.out.println(getDate().toString() + ": " + Integer.toString(getStaffCases()) + " staff, " + Integer.toString(getStudentCases()) + " students, " + Integer.toString(getOtherCases()) + " other");
+		string = getDate().toString() + ": " + Integer.toString(getStaffCases()) + " staff, " + Integer.toString(getStudentCases()) + " students, " + Integer.toString(getOtherCases()) + " other";
 		return string;
 	}
 	public static void main(String[] args){
